@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../data/models/word.dart';
-import 'card_front.dart';
-import 'card_back.dart';
+import '../widgets/universal_card_face.dart'; // Correct import
 import 'dart:math' as math;
 import '../../../core/services/sound_service.dart';
 
@@ -113,11 +112,11 @@ class _FlipCardState extends State<FlipCard>
                   ],
                 ),
                 child: isFrontVisible
-                    ? CardFront(word: widget.word)
+                    ? UniversalCardFace(word: widget.word, showMeaning: false)
                     : Transform(
                         alignment: Alignment.center,
                         transform: Matrix4.identity()..rotateY(math.pi), // 翻转背面防止镜像
-                        child: CardBack(word: widget.word),
+                        child: UniversalCardFace(word: widget.word, showMeaning: true),
                       ),
               ),
             );

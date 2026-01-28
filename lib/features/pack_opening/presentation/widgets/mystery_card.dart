@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../data/models/models.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../shared/widgets/universal_card_face.dart';
 
 class MysteryCard extends StatefulWidget {
   final Word word;
@@ -112,60 +113,11 @@ class _MysteryCardState extends State<MysteryCard> with SingleTickerProviderStat
       );
   }
 
+
   Widget _buildTrophyFace() {
-     final rarityColor = AppColors.getRarityColor(widget.word.rarity ?? 'common');
-     
-     return Container(
-        decoration: BoxDecoration(
-           color: Colors.white,
-           borderRadius: BorderRadius.circular(16),
-           border: Border.all(color: rarityColor, width: 4),
-           boxShadow: [
-              BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 4, offset: const Offset(0, 2)),
-           ],
-        ),
-        padding: const EdgeInsets.all(12),
-        child: Column(
-           mainAxisAlignment: MainAxisAlignment.center,
-           children: [
-              const Spacer(),
-              // English
-              Text(
-                 widget.word.text,
-                 style: AppTextStyles.h2.copyWith(color: Colors.black87),
-                 textAlign: TextAlign.center,
-                 maxLines: 1,
-                 overflow: TextOverflow.ellipsis,
-              ),
-              const SizedBox(height: 4),
-              // Phonetic
-              Text(
-                 widget.word.phonetic ?? '',
-                 style: AppTextStyles.bodySmall.copyWith(color: Colors.grey),
-              ),
-              const SizedBox(height: 12),
-              // Chinese (Always visible)
-              Container(
-                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                 decoration: BoxDecoration(
-                    color: rarityColor.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(8),
-                 ),
-                 child: Text(
-                    widget.word.definition ?? '',
-                    style: AppTextStyles.bodyMedium(
-                       color: Colors.black87
-                    ).copyWith(height: 1.2),
-                    textAlign: TextAlign.center,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                 ),
-              ),
-              const Spacer(),
-              // Rarity Icon
-              Icon(Icons.stars, color: rarityColor, size: 24),
-           ],
-        ),
+     return UniversalCardFace(
+       word: widget.word,
+       showMeaning: true,
      );
   }
 }

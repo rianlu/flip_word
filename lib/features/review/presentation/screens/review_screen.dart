@@ -5,6 +5,7 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../shared/cards/cards.dart';
 import '../../../../core/services/sound_service.dart';
 import '../providers/review_provider.dart';
+import '../widgets/quiz_challenge_card.dart';
 
 /// 复习页面 Scaffold
 class ReviewScreen extends ConsumerWidget {
@@ -38,8 +39,8 @@ class ReviewScreen extends ConsumerWidget {
             return const _SessionCompleteView();
           }
 
-          final currentWord = session.currentWord;
-          if (currentWord == null) return const SizedBox();
+          final currentItem = session.currentItem;
+          if (currentItem == null) return const SizedBox();
 
           return Column(
             children: [
@@ -68,11 +69,20 @@ class ReviewScreen extends ConsumerWidget {
               Center(
                 child: SizedBox(
                    width: 320,
-                   height: 450,
-                   child: _ReviewCardSection(
-                     key: ValueKey(currentWord.id), 
-                     word: currentWord,
-                   ),
+                   height: 500, // Slightly taller to accommodate quiz grid
+                   child: currentItem.mode == ReviewMode.quiz
+                       ? QuizChallengeCard(
+                           key: ValueKey('quiz_${currentItem.word.id}'),
+                           word: currentItem.word,
+                           options: currentItem.options,
+                           onCorrect: () {
+                             ref.read(reviewSessionProvider.notifier).gradeCard(3);
+                           },
+                         )
+                       : _ReviewCardSection(
+                           key: ValueKey('flash_${currentItem.word.id}'), 
+                           word: currentItem.word,
+                         ),
                 ),
               ),
 
