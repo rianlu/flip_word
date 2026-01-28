@@ -7,21 +7,28 @@ part 'theme.g.dart';
 /// 对应 Supabase `themes` 表
 /// 例如："水果乐园 🍎"、"动物世界 🦁"
 @freezed
-class Theme with _$Theme {
-  const factory Theme({
-    /// 主题 ID（自增主键）
-    required int id,
+class ThemeModel with _$ThemeModel {
+  const factory ThemeModel({
+    /// 主题 ID (String)
+    required String id,
 
     /// 主题名称（可选）
-    /// 例如："水果乐园"
     String? name,
 
     /// 主题 Emoji（可选）
-    /// 例如："🍎"
     String? emoji,
+    
+    /// 描述 (Description)
+    String? description,
+
+    /// 分类 (Category)
+    String? category,
+
+    /// 颜色 (Color Hex String)
+    String? color,
   }) = _Theme;
 
-  factory Theme.fromJson(Map<String, dynamic> json) => _$ThemeFromJson(json);
+  factory ThemeModel.fromJson(Map<String, dynamic> json) => _$ThemeModelFromJson(json);
 }
 
 /// 预定义主题常量（示例）

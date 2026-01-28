@@ -27,7 +27,7 @@ class Word with _$Word {
     String? rarity,
 
     /// 主题 ID（可选）
-    @JsonKey(name: 'theme_id') int? themeId,
+    @JsonKey(name: 'theme_id') String? themeId,
 
     /// 词形变化（JSON 格式）
     /// 例如：{"past": "ran", "plural": "runs", "present_participle": "running"}

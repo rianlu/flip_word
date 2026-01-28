@@ -13,7 +13,7 @@ _$WordImpl _$$WordImplFromJson(Map<String, dynamic> json) => _$WordImpl(
   definition: json['definition'] as String?,
   partOfSpeech: json['part_of_speech'] as String?,
   rarity: json['rarity'] as String?,
-  themeId: (json['theme_id'] as num?)?.toInt(),
+  themeId: json['theme_id'] as String?,
   forms: json['forms'] as Map<String, dynamic>?,
 );
 

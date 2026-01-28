@@ -37,6 +37,9 @@ dependencies:
 
   # 路由
   go_router: ^14.6.2
+  audioplayers: ^6.5.1
+  shared_preferences: ^2.5.4
+  confetti: ^0.8.0
 
 dev_dependencies:
   flutter_test:
@@ -60,5 +63,7 @@ flutter:
     - assets/images/
     - assets/images/logo.png
     - assets/images/card_backs/
+    - assets/sounds/
+    - assets/data/
     - assets/images/particles/
     - assets/animations/

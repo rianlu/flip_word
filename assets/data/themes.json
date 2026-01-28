@@ -1,0 +1,58 @@
+[
+    {
+        "id": "theme_fruit",
+        "name": "🍎 水果篮子",
+        "description": "香甜多汁的美味单词。",
+        "category": "basic",
+        "color": "0xFFE57373"
+    },
+    {
+        "id": "theme_numbers",
+        "name": "🔢 数字与几何",
+        "description": "逻辑思维的基石。",
+        "category": "basic",
+        "color": "0xFF64B5F6"
+    },
+    {
+        "id": "theme_family",
+        "name": "🏡 我的家庭",
+        "description": "也就是我们要守护的人。",
+        "category": "basic",
+        "color": "0xFFFFD54F"
+    },
+    {
+        "id": "theme_animals",
+        "name": "🦁 野生动物",
+        "description": "狮子、老虎和熊！",
+        "category": "expansion",
+        "color": "0xFF81C784"
+    },
+    {
+        "id": "theme_space",
+        "name": "🪐 太空漫游",
+        "description": "探索银河系的奥秘。",
+        "category": "expansion",
+        "color": "0xFF212121"
+    },
+    {
+        "id": "theme_travel",
+        "name": "✈️ 环球旅行",
+        "description": "机场、酒店与名胜古迹。",
+        "category": "expansion",
+        "color": "0xFF4DB6AC"
+    },
+    {
+        "id": "theme_halloween",
+        "name": "🎃 万圣节惊魂",
+        "description": "不给糖就捣蛋！",
+        "category": "limited",
+        "color": "0xFFFF8A65"
+    },
+    {
+        "id": "theme_christmas",
+        "name": "🎄 圣诞快乐",
+        "description": "叮叮当，叮叮当...",
+        "category": "limited",
+        "color": "0xFFEF5350"
+    }
+]

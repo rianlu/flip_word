@@ -1,0 +1,184 @@
+{
+  "words": [
+    {
+      "id": 101,
+      "text": "Apple",
+      "phonetic": "/ˈæpəl/",
+      "definition": "A round fruit with red or green skin and a white inside.",
+      "rarity": "common",
+      "part_of_speech": "n.",
+      "theme_id": "theme_fruit"
+    },
+    {
+      "id": 102,
+      "text": "Banana",
+      "phonetic": "/bəˈnænə/",
+      "definition": "A long curved fruit with a yellow skin.",
+      "rarity": "common",
+      "part_of_speech": "n.",
+      "theme_id": "theme_fruit"
+    },
+    {
+      "id": 103,
+      "text": "Cherry",
+      "phonetic": "/ˈtʃeri/",
+      "definition": "A small soft round fruit with shiny red or black skin.",
+      "rarity": "rare",
+      "part_of_speech": "n.",
+      "theme_id": "theme_fruit"
+    },
+    {
+      "id": 104,
+      "text": "Orange",
+      "phonetic": "/ˈɔːrɪndʒ/",
+      "definition": "A round citrus fruit with thick reddish-yellow skin.",
+      "rarity": "common",
+      "part_of_speech": "n.",
+      "theme_id": "theme_fruit"
+    },
+    {
+      "id": 105,
+      "text": "Grape",
+      "phonetic": "/ɡreɪp/",
+      "definition": "A small green or purple fruit that grows in bunches.",
+      "rarity": "common",
+      "part_of_speech": "n.",
+      "theme_id": "theme_fruit"
+    },
+    {
+      "id": 106,
+      "text": "Lemon",
+      "phonetic": "/ˈlemən/",
+      "definition": "A fruit with yellow skin and sour juice.",
+      "rarity": "common",
+      "part_of_speech": "n.",
+      "theme_id": "theme_fruit"
+    },
+    {
+      "id": 107,
+      "text": "Peach",
+      "phonetic": "/piːtʃ/",
+      "definition": "A round fruit with soft red and yellow skin.",
+      "rarity": "rare",
+      "part_of_speech": "n.",
+      "theme_id": "theme_fruit"
+    },
+    {
+      "id": 108,
+      "text": "Pear",
+      "phonetic": "/per/",
+      "definition": "A fruit with a sweet taste and a shape that is wide at the bottom.",
+      "rarity": "common",
+      "part_of_speech": "n.",
+      "theme_id": "theme_fruit"
+    },
+    {
+      "id": 109,
+      "text": "Strawberry",
+      "phonetic": "/ˈstrɔːberi/",
+      "definition": "A soft red fruit with small seeds on its surface.",
+      "rarity": "rare",
+      "part_of_speech": "n.",
+      "theme_id": "theme_fruit"
+    },
+    {
+      "id": 110,
+      "text": "Watermelon",
+      "phonetic": "/ˈwɔːtərmelən/",
+      "definition": "A large round fruit with green skin and red flesh.",
+      "rarity": "rare",
+      "part_of_speech": "n.",
+      "theme_id": "theme_fruit"
+    },
+    {
+      "id": 201,
+      "text": "Galaxy",
+      "phonetic": "/ˈɡæləksi/",
+      "definition": "A system of stars, gas, and dust held together by gravity.",
+      "rarity": "epic",
+      "part_of_speech": "n.",
+      "theme_id": "theme_space"
+    },
+    {
+      "id": 202,
+      "text": "Astronaut",
+      "phonetic": "/ˈæstrənɔːt/",
+      "definition": "A person trained to travel in a spacecraft.",
+      "rarity": "epic",
+      "part_of_speech": "n.",
+      "theme_id": "theme_space"
+    },
+    {
+      "id": 203,
+      "text": "Meteor",
+      "phonetic": "/ˈmiːtiər/",
+      "definition": "A piece of rock or metal that burns and glows as it hits the Earth's atmosphere.",
+      "rarity": "rare",
+      "part_of_speech": "n.",
+      "theme_id": "theme_space"
+    },
+    {
+      "id": 204,
+      "text": "Nebula",
+      "phonetic": "/ˈnebjələ/",
+      "definition": "A cloud of gas and dust in outer space.",
+      "rarity": "legend",
+      "part_of_speech": "n.",
+      "theme_id": "theme_space"
+    },
+    {
+      "id": 205,
+      "text": "Eclipse",
+      "phonetic": "/ɪˈklɪps/",
+      "definition": "An occasion when the sun or moon is covered by another object.",
+      "rarity": "epic",
+      "part_of_speech": "n.",
+      "theme_id": "theme_space"
+    },
+    {
+      "id": 206,
+      "text": "Black Hole",
+      "phonetic": "/ˌblæk ˈhoʊl/",
+      "definition": "An area in space with gravity so strong that nothing can escape it.",
+      "rarity": "legend",
+      "part_of_speech": "n.",
+      "theme_id": "theme_space"
+    },
+    {
+      "id": 207,
+      "text": "Supernova",
+      "phonetic": "/ˌsuːpərˈnoʊvə/",
+      "definition": "An exploding star that produces an extremely bright light.",
+      "rarity": "legend",
+      "part_of_speech": "n.",
+      "theme_id": "theme_space"
+    },
+    {
+      "id": 208,
+      "text": "Orbit",
+      "phonetic": "/ˈɔːrbɪt/",
+      "definition": "The curved path of an object around a star or planet.",
+      "rarity": "rare",
+      "part_of_speech": "n.",
+      "theme_id": "theme_space"
+    },
+    {
+      "id": 209,
+      "text": "Telescope",
+      "phonetic": "/ˈtelɪskoʊp/",
+      "definition": "A piece of equipment used to look at distant objects.",
+      "rarity": "epic",
+      "part_of_speech": "n.",
+      "theme_id": "theme_space"
+    },
+    {
+      "id": 210,
+      "text": "Mars",
+      "phonetic": "/mɑːrz/",
+      "definition": "The fourth planet from the sun, known as the Red Planet.",
+      "rarity": "rare",
+      "part_of_speech": "n.",
+      "theme_id": "theme_space"
+    }
+  ]
+}

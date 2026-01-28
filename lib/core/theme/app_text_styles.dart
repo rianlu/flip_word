@@ -2,224 +2,135 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
-/// FlipWord 应用文本样式系统
-/// 使用 GoogleFonts 实现多语言字体支持
-/// - 英文：Nunito (柔和圆润) / Quicksand (活力Q弹)
-/// - 中文：Noto Sans SC (简洁现代)
+/// FlipWord Consistent Design System - Typography
+/// Enforces hierarchy: h1, h2, h3, body, caption
 class AppTextStyles {
-  // 防止实例化
   AppTextStyles._();
 
-  // ============================================
-  // 字体家族 (Font Families)
-  // ============================================
+  // ===========================================================================
+  // Base Fonts
+  // ===========================================================================
   
-  /// 英文主字体 - Nunito (用于正文、释义)
-  static TextStyle get _nunitoBase => GoogleFonts.nunito();
+  // English: Nunito (Rounded, Friendly)
+  static TextStyle get _fontPrimary => GoogleFonts.nunito();
   
-  /// 英文强调字体 - Quicksand (用于单词卡片、标题)
-  static TextStyle get _quicksandBase => GoogleFonts.quicksand();
+  // Chinese: Noto Sans SC
+  static TextStyle get _fontChinese => GoogleFonts.notoSansSc();
+
+  // ===========================================================================
+  // Hierarchy
+  // ===========================================================================
+
+  /// H1: Big Titles (Page Headers, Hero Text)
+  /// Size: 32, Weight: Bold
+  static TextStyle get h1 => _fontPrimary.copyWith(
+    fontSize: 32,
+    fontWeight: FontWeight.bold,
+    color: AppColors.textPrimary,
+    letterSpacing: -0.5,
+  );
+
+  /// H2: Section Titles (Card Titles, Section Headers)
+  /// Size: 24, Weight: SemiBold
+  static TextStyle get h2 => _fontPrimary.copyWith(
+    fontSize: 24,
+    fontWeight: FontWeight.w600,
+    color: AppColors.textPrimary,
+    letterSpacing: 0,
+  );
+
+  /// H3: Subtitles (Small Headers)
+  /// Size: 18, Weight: Bold
+  static TextStyle get h3 => _fontPrimary.copyWith(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: AppColors.textPrimary,
+  );
+
+  /// Body: Standard Reading Text
+  /// Size: 16, Weight: Normal
+  static TextStyle get body => _fontPrimary.copyWith(
+    fontSize: 16,
+    fontWeight: FontWeight.normal,
+    color: AppColors.textPrimary,
+    height: 1.5, // Better readability
+  );
   
-  /// 中文字体 - Noto Sans SC
-  static TextStyle get _notoSansBase => GoogleFonts.notoSansSc();
+  /// Body Small: Dense information
+  /// Size: 14, Weight: Normal
+  static TextStyle get bodySmall => _fontPrimary.copyWith(
+    fontSize: 14,
+    fontWeight: FontWeight.normal,
+    color: AppColors.textSecondary,
+    height: 1.4,
+  );
 
-  // ============================================
-  // 显示级别文本 (Display Text) - 超大号标题
-  // ============================================
+  /// Caption: Tiny details, timestamps, badges
+  /// Size: 12, Weight: SemiBold
+  static TextStyle get caption => _fontPrimary.copyWith(
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+    color: AppColors.textSecondary,
+    letterSpacing: 0.5,
+  );
+
+  /// Button: Text inside buttons
+  /// Size: 16, Weight: Bold
+  static TextStyle get button => _fontPrimary.copyWith(
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+    color: AppColors.textInverse, // Usually white on primary
+    letterSpacing: 0.5,
+  );
+
+  // ===========================================================================
+  // Game Specific Styles (Methods for flexibility & compatibility)
+  // ===========================================================================
+
+  /// Card Front Word
+  static TextStyle cardWord({Color? color}) => _fontPrimary.copyWith(
+    fontSize: 40,
+    fontWeight: FontWeight.w800,
+    color: color ?? AppColors.textPrimary,
+  );
   
-  /// Display Large - 用于 Logo、启动页
-  static TextStyle displayLarge({Color? color}) => _quicksandBase.copyWith(
-        fontSize: 57,
-        fontWeight: FontWeight.w700,
-        letterSpacing: -0.25,
-        color: color,
-      );
+  /// Card Definition (Chinese)
+  static TextStyle definition({Color? color}) => _fontChinese.copyWith(
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+    color: color ?? AppColors.textPrimary,
+    height: 1.6,
+  );
 
-  /// Display Medium - 用于页面主标题
-  static TextStyle displayMedium({Color? color}) => _quicksandBase.copyWith(
-        fontSize: 45,
-        fontWeight: FontWeight.w700,
-        color: color,
-      );
-
-  /// Display Small - 用于次级标题
-  static TextStyle displaySmall({Color? color}) => _quicksandBase.copyWith(
-        fontSize: 36,
-        fontWeight: FontWeight.w600,
-        color: color,
-      );
-
-  // ============================================
-  // 标题文本 (Headline Text)
-  // ============================================
+  /// Stardust Counter
+  static TextStyle stardust({Color? color}) => _fontPrimary.copyWith(
+    fontSize: 18,
+    fontWeight: FontWeight.w800,
+    color: color ?? AppColors.stardust,
+  );
   
-  /// Headline Large - 卡片上的单词（超大）
-  static TextStyle headlineLarge({Color? color}) => _quicksandBase.copyWith(
-        fontSize: 32,
-        fontWeight: FontWeight.w700,
-        color: color,
-      );
-
-  /// Headline Medium - 区块标题
-  static TextStyle headlineMedium({Color? color}) => _nunitoBase.copyWith(
-        fontSize: 28,
-        fontWeight: FontWeight.w600,
-        color: color,
-      );
-
-  /// Headline Small - 小标题
-  static TextStyle headlineSmall({Color? color}) => _nunitoBase.copyWith(
-        fontSize: 24,
-        fontWeight: FontWeight.w600,
-        color: color,
-      );
-
-  // ============================================
-  // 正文文本 (Body Text)
-  // ============================================
+  // ===========================================================================
+  // Compatibility Layer (Deprecated)
+  // ===========================================================================
   
-  /// Body Large - 大号正文
-  static TextStyle bodyLarge({Color? color}) => _nunitoBase.copyWith(
-        fontSize: 16,
-        fontWeight: FontWeight.w400,
-        letterSpacing: 0.5,
-        color: color,
-      );
-
-  /// Body Medium - 常规正文
-  static TextStyle bodyMedium({Color? color}) => _nunitoBase.copyWith(
-        fontSize: 14,
-        fontWeight: FontWeight.w400,
-        letterSpacing: 0.25,
-        color: color,
-      );
-
-  /// Body Small - 小号正文
-  static TextStyle bodySmall({Color? color}) => _nunitoBase.copyWith(
-        fontSize: 12,
-        fontWeight: FontWeight.w400,
-        letterSpacing: 0.4,
-        color: color,
-      );
-
-  // ============================================
-  // 标签文本 (Label Text) - 按钮、标签
-  // ============================================
+  static TextStyle headlineLarge({Color? color}) => h1.copyWith(color: color);
+  static TextStyle headlineMedium({Color? color}) => h2.copyWith(color: color);
+  static TextStyle headlineSmall({Color? color}) => h3.copyWith(color: color);
   
-  /// Label Large - 大型按钮文字
-  static TextStyle labelLarge({Color? color}) => _quicksandBase.copyWith(
-        fontSize: 14,
-        fontWeight: FontWeight.w600,
-        letterSpacing: 0.1,
-        color: color,
-      );
-
-  /// Label Medium - 常规按钮文字
-  static TextStyle labelMedium({Color? color}) => _nunitoBase.copyWith(
-        fontSize: 12,
-        fontWeight: FontWeight.w600,
-        letterSpacing: 0.5,
-        color: color,
-      );
-
-  /// Label Small - 小型标签
-  static TextStyle labelSmall({Color? color}) => _nunitoBase.copyWith(
-        fontSize: 11,
-        fontWeight: FontWeight.w500,
-        letterSpacing: 0.5,
-        color: color,
-      );
-
-  // ============================================
-  // 特殊用途文本 (Special Purpose)
-  // ============================================
+  static TextStyle bodyLarge({Color? color}) => body.copyWith(fontSize: 18, color: color);
+  static TextStyle bodyMedium({Color? color}) => body.copyWith(color: color);
+  // static TextStyle bodySmall({Color? color}) => bodySmall.copyWith(color: color); // conflict name
   
-  /// 单词卡片 - 正面单词（超大粗体）
-  static TextStyle cardWord({Color? color}) => _quicksandBase.copyWith(
-        fontSize: 48,
-        fontWeight: FontWeight.w800,
-        letterSpacing: 1.0,
-        color: color,
-      );
-
-  /// 音标文本
-  static TextStyle phonetic({Color? color}) => _nunitoBase.copyWith(
-        fontSize: 16,
-        fontWeight: FontWeight.w400,
-        fontStyle: FontStyle.italic,
-        color: color ?? AppColors.textSecondaryLight,
-      );
-
-  /// 释义文本（中文）
-  static TextStyle definition({Color? color}) => _notoSansBase.copyWith(
-        fontSize: 16,
-        fontWeight: FontWeight.w400,
-        height: 1.5,
-        color: color,
-      );
-
-  /// 例句文本
-  static TextStyle example({Color? color}) => _nunitoBase.copyWith(
-        fontSize: 14,
-        fontWeight: FontWeight.w400,
-        fontStyle: FontStyle.italic,
-        height: 1.6,
-        color: color ?? AppColors.textSecondaryLight,
-      );
-
-  /// 稀有度标签
-  static TextStyle rarityBadge({Color? color}) => _quicksandBase.copyWith(
-        fontSize: 10,
-        fontWeight: FontWeight.w700,
-        letterSpacing: 1.2,
-        color: color ?? Colors.white,
-      );
-
-  /// 星尘数量显示
-  static TextStyle stardustAmount({Color? color}) => _quicksandBase.copyWith(
-        fontSize: 20,
-        fontWeight: FontWeight.w700,
-        color: color ?? AppColors.stardust,
-      );
-
-  /// 词性标签（如 n. v. adj.）
-  static TextStyle partOfSpeech({Color? color}) => _nunitoBase.copyWith(
-        fontSize: 12,
-        fontWeight: FontWeight.w600,
-        fontStyle: FontStyle.italic,
-        color: color,
-      );
-
-  /// 导航栏文字
-  static TextStyle navLabel({Color? color}) => _quicksandBase.copyWith(
-        fontSize: 12,
-        fontWeight: FontWeight.w600,
-        color: color,
-      );
-
-  // ============================================
-  // 中文专用样式
-  // ============================================
+  static TextStyle labelLarge({Color? color}) => button.copyWith(color: color);
+  static TextStyle labelMedium({Color? color}) => caption.copyWith(fontSize: 14, color: color);
+  static TextStyle labelSmall({Color? color}) => caption.copyWith(fontSize: 11, color: color);
   
-  /// 中文标题
-  static TextStyle chineseHeadline({Color? color}) => _notoSansBase.copyWith(
-        fontSize: 24,
-        fontWeight: FontWeight.w700,
-        color: color,
-      );
-
-  /// 中文正文
-  static TextStyle chineseBody({Color? color}) => _notoSansBase.copyWith(
-        fontSize: 16,
-        fontWeight: FontWeight.w400,
-        height: 1.6,
-        color: color,
-      );
-
-  /// 中文按钮
-  static TextStyle chineseButton({Color? color}) => _notoSansBase.copyWith(
-        fontSize: 14,
-        fontWeight: FontWeight.w600,
-        color: color,
-      );
+  static TextStyle partOfSpeech({Color? color}) => caption.copyWith(color: color, fontStyle: FontStyle.italic);
+  static TextStyle rarityBadge({Color? color}) => caption.copyWith(color: color, fontWeight: FontWeight.bold);
+  static TextStyle phonetic({Color? color}) => bodySmall.copyWith(color: color, fontStyle: FontStyle.italic);
+  static TextStyle navLabel({Color? color}) => caption.copyWith(color: color);
+  
+  // Chinese compat
+  static TextStyle chineseHeadline({Color? color}) => _fontChinese.copyWith(fontSize: 24, fontWeight: FontWeight.bold, color: color);
+  static TextStyle chineseBody({Color? color}) => _fontChinese.copyWith(fontSize: 16, color: color);
 }

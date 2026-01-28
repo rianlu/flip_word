@@ -7,9 +7,12 @@ part of 'theme.dart';
 // **************************************************************************
 
 _$ThemeImpl _$$ThemeImplFromJson(Map<String, dynamic> json) => _$ThemeImpl(
-  id: (json['id'] as num).toInt(),
+  id: json['id'] as String,
   name: json['name'] as String?,
   emoji: json['emoji'] as String?,
+  description: json['description'] as String?,
+  category: json['category'] as String?,
+  color: json['color'] as String?,
 );
 
 Map<String, dynamic> _$$ThemeImplToJson(_$ThemeImpl instance) =>
@@ -17,4 +20,7 @@ Map<String, dynamic> _$$ThemeImplToJson(_$ThemeImpl instance) =>
       'id': instance.id,
       'name': instance.name,
       'emoji': instance.emoji,
+      'description': instance.description,
+      'category': instance.category,
+      'color': instance.color,
     };

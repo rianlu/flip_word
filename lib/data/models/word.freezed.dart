@@ -42,7 +42,7 @@ mixin _$Word {
 
   /// 主题 ID（可选）
   @JsonKey(name: 'theme_id')
-  int? get themeId => throw _privateConstructorUsedError;
+  String? get themeId => throw _privateConstructorUsedError;
 
   /// 词形变化（JSON 格式）
   /// 例如：{"past": "ran", "plural": "runs", "present_participle": "running"}
@@ -69,7 +69,7 @@ abstract class $WordCopyWith<$Res> {
     String? definition,
     @JsonKey(name: 'part_of_speech') String? partOfSpeech,
     String? rarity,
-    @JsonKey(name: 'theme_id') int? themeId,
+    @JsonKey(name: 'theme_id') String? themeId,
     Map<String, dynamic>? forms,
   });
 }
@@ -127,7 +127,7 @@ class _$WordCopyWithImpl<$Res, $Val extends Word>
             themeId: freezed == themeId
                 ? _value.themeId
                 : themeId // ignore: cast_nullable_to_non_nullable
-                      as int?,
+                      as String?,
             forms: freezed == forms
                 ? _value.forms
                 : forms // ignore: cast_nullable_to_non_nullable
@@ -153,7 +153,7 @@ abstract class _$$WordImplCopyWith<$Res> implements $WordCopyWith<$Res> {
     String? definition,
     @JsonKey(name: 'part_of_speech') String? partOfSpeech,
     String? rarity,
-    @JsonKey(name: 'theme_id') int? themeId,
+    @JsonKey(name: 'theme_id') String? themeId,
     Map<String, dynamic>? forms,
   });
 }
@@ -208,7 +208,7 @@ class __$$WordImplCopyWithImpl<$Res>
         themeId: freezed == themeId
             ? _value.themeId
             : themeId // ignore: cast_nullable_to_non_nullable
-                  as int?,
+                  as String?,
         forms: freezed == forms
             ? _value._forms
             : forms // ignore: cast_nullable_to_non_nullable
@@ -263,7 +263,7 @@ class _$WordImpl implements _Word {
   /// 主题 ID（可选）
   @override
   @JsonKey(name: 'theme_id')
-  final int? themeId;
+  final String? themeId;
 
   /// 词形变化（JSON 格式）
   /// 例如：{"past": "ran", "plural": "runs", "present_participle": "running"}
@@ -339,7 +339,7 @@ abstract class _Word implements Word {
     final String? definition,
     @JsonKey(name: 'part_of_speech') final String? partOfSpeech,
     final String? rarity,
-    @JsonKey(name: 'theme_id') final int? themeId,
+    @JsonKey(name: 'theme_id') final String? themeId,
     final Map<String, dynamic>? forms,
   }) = _$WordImpl;
 
@@ -373,7 +373,7 @@ abstract class _Word implements Word {
   /// 主题 ID（可选）
   @override
   @JsonKey(name: 'theme_id')
-  int? get themeId;
+  String? get themeId;
 
   /// 词形变化（JSON 格式）
   /// 例如：{"past": "ran", "plural": "runs", "present_participle": "running"}
